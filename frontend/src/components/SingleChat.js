@@ -21,7 +21,7 @@ import Lottie from "react-lottie";
 import "./style.css";
 import animationData from "../animations/typing.json";
 
-const ENDPOINT = "https://talk-a-tive-tnze.onrender.com/";
+const ENDPOINT = "https://mern-chat-app-ww9s.onrender.com/";
 var socket, selectedChatCompare;
 
 const SingleChat = ({ fetchAgain, setFetchAgain }) => {
