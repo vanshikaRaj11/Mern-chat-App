@@ -62,7 +62,6 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
         `/api/message/${selectedChat._id}`,
         config
       );
-      console.log(messages);
 
       setMessages(data);
       setLoading(false);
