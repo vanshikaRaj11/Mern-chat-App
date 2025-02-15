@@ -133,13 +133,25 @@ const SideDrawer = () => {
           Talk-A-Tive
         </Text>
 
-        <div>
-          {" "}
+        {/* Notification & Profile */}
+        <Box display="flex" alignItems="center" gap={4}>
+          {/* Notification Bell */}
           <Menu>
-            <NotificationBadge count={notification.length}
-              effect={ Effect.SCALE} />
             <MenuButton p={1}>
-              <FaBell fontSize={"2xl"} m="1" />
+              <Box position="relative">
+                <FaBell fontSize={"1.6rem"} />
+                {notification.length > 0 && (
+                  <NotificationBadge
+                    count={notification.length}
+                    effect={Effect.SCALE}
+                    style={{
+                      position: "absolute",
+                      top: "-32px",
+                      right: "-10px",
+                    }}
+                  />
+                )}
+              </Box>
             </MenuButton>
             <MenuList pl={2}>
               {!notification.length && "No New Messages"}
@@ -158,6 +170,8 @@ const SideDrawer = () => {
               ))}
             </MenuList>
           </Menu>
+
+          {/* User Profile */}
           <Menu>
             <MenuButton as={Button} rightIcon={<FaChevronDown />}>
               <Avatar
@@ -165,7 +179,7 @@ const SideDrawer = () => {
                 cursor="pointer"
                 name={user.name}
                 src={user.pic}
-              ></Avatar>
+              />
             </MenuButton>
 
             <MenuList>
@@ -176,7 +190,7 @@ const SideDrawer = () => {
               <MenuItem onClick={logoutHandler}>Logout</MenuItem>
             </MenuList>
           </Menu>
-        </div>
+        </Box>
       </Box>
       <Drawer placement="left" onClose={onClose} isOpen={isOpen}>
         <DrawerOverlay />

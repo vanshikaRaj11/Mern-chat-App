@@ -22,6 +22,7 @@ import "./style.css";
 import animationData from "../animations/typing.json";
 
 const ENDPOINT = "https://mern-chat-app-ww9s.onrender.com/";
+// const ENDPOINT = "http://localhost:3000/"
 var socket, selectedChatCompare;
 
 const SingleChat = ({ fetchAgain, setFetchAgain }) => {
